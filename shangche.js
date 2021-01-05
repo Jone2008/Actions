@@ -14,8 +14,8 @@ const shareCodes = [
     mc: "MTAxODc2NTEzOTAwMDAwMDAzMzU4NzU2OQ==",
     //dd: "P04z54XCjVWnYaS5jYNDWX72HlXltIRy4Jot-E",
     jx: "wuvqpko2F3tj8Yvrdbft0A==",
-    zz:"Svfh2RR0c8EnUJR3znfQJdA"
-    joy:"f14yCI8QvHeosK7_3kWvOat9zd5YaBeE"
+    zz: "Svfh2RR0c8EnUJR3znfQJdA"
+    //joy: "f14yCI8QvHeosK7_3kWvOat9zd5YaBeE"
   },
   {
     zd: "4npkonnsy7xi3pzaezezc7plx2o32nlk4ih2jna",
@@ -23,8 +23,8 @@ const shareCodes = [
     mc: "MTE1NDQ5OTUwMDAwMDAwNDI1OTMxNDE=",
     //dd: "P04z54XCjVWnYaS5m9cZ2f5231LknLSN7iRCqE",
     jx: "UdXIG7xaeRenKkCRnXA4bA==",
-    zz:"S5KkcRx8f9FXQJRiikP9YJg"
-    joy:"zCx4mMEE_YXS3Bv8bX2reqt9zd5YaBeE"
+    zz: "S5KkcRx8f9FXQJRiikP9YJg"
+    //joy: "zCx4mMEE_YXS3Bv8bX2reqt9zd5YaBeE"
   },
 
 ];
