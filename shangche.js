@@ -14,8 +14,8 @@ const shareCodes = [
     mc: "MTAxODc2NTEzOTAwMDAwMDAzMzU4NzU2OQ==",
     //dd: "P04z54XCjVWnYaS5jYNDWX72HlXltIRy4Jot-E",
     jx: "wuvqpko2F3tj8Yvrdbft0A==",
-    zz: "Svfh2RR0c8EnUJR3znfQJdA"
-    //joy: "f14yCI8QvHeosK7_3kWvOat9zd5YaBeE"
+    zz: "Svfh2RR0c8EnUJR3znfQJdA" ,
+    joy: "f14yCI8QvHeosK7_3kWvOat9zd5YaBeE"
   },
   {
     zd: "4npkonnsy7xi3pzaezezc7plx2o32nlk4ih2jna",
@@ -23,8 +23,8 @@ const shareCodes = [
     mc: "MTE1NDQ5OTUwMDAwMDAwNDI1OTMxNDE=",
     //dd: "P04z54XCjVWnYaS5m9cZ2f5231LknLSN7iRCqE",
     jx: "UdXIG7xaeRenKkCRnXA4bA==",
-    zz: "S5KkcRx8f9FXQJRiikP9YJg"
-    //joy: "zCx4mMEE_YXS3Bv8bX2reqt9zd5YaBeE"
+    zz: "S5KkcRx8f9FXQJRiikP9YJg" ,
+    joy: "zCx4mMEE_YXS3Bv8bX2reqt9zd5YaBeE"
   },
 
 ];
@@ -32,7 +32,7 @@ $.result = []
 
 !(async () => {
   for (let i = 0; i < shareCodes.length; i++) {
-    const { zd, nc, mc, dd, jx,zz} = shareCodes[i];
+    const { zd, nc, mc, dd, jx, zz, joy} = shareCodes[i];
     zd && await createZd(`http://api.turinglabs.net/api/v1/jd/bean/create/${zd}/`)
     nc && await createNc(`http://api.turinglabs.net/api/v1/jd/farm/create/${nc}/`)
     mc && await createMc(`http://api.turinglabs.net/api/v1/jd/pet/create/${mc}/`)
@@ -181,7 +181,7 @@ function createJoy(joyUrl) {
 async function showMsg() {
   if ($.isNode()){
      $.log(jsname+'\n'+message)
-     await notify.sendNotify("ZhiYi-N🚗", message)
+     await notify.sendNotify("shangche🚗", message)
     }else{
      $.log(message)
      $.msg(jsname, "", message)
