@@ -39,7 +39,7 @@ $.result = []
     //dd && await createDd(`http://api.turinglabs.net/api/v1/jd/ddfactory/create/${dd}/`)
     jx && await createJx(`http://api.turinglabs.net/api/v1/jd/jxfactory/create/${jx}/`)
     zz &await createZz(`https://code.chiang.fun/api/v1/jd/jdzz/create/${zz}/`)
-    joy &await createZz(`https://code.chiang.fun/api/v1/jd/jdcrazyjoy/create/${joy}/`)
+    joy &await createJoy(`https://code.chiang.fun/api/v1/jd/jdcrazyjoy/create/${joy}/`)
   }
   await showMsg()
 })()
@@ -157,9 +157,9 @@ function createZz(zzUrl) {
 
 
 //疯狂JOY
-function createZz(zzUrl) {
+function createJoy(joyUrl) {
   return new Promise((resolve) => {
-    const url = { url: zzUrl }
+    const url = { url: joyUrl }
     $.get(url, (err, resp, data) => {
       try {
         const _data = JSON.parse(data)
