@@ -3,7 +3,7 @@ name: shangche🚗
 on:
   workflow_dispatch:
   schedule:
-    - cron: '2 18 * * ?' #北京时间2:18运行提交
+    - cron: '5 18 30,31,9,19 * *' #北京时间每月1，10,20日的凌晨02:05运行提交
   watch:
     types: [started]
 
