@@ -25,7 +25,7 @@ if(process.env.IGOT_PUSH_KEY){
 }
 
 async function downFile () {
-    const url = 'https://raw.githubusercontent.com/shylocks/Loon/main/jkd.js'
+    const url = 'https://raw.githubusercontent.com/Jone2008/QuantumultX/master/jkd.js'
     await download(url, './')
 }
 
