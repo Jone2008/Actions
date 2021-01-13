@@ -12,19 +12,21 @@ const shareCodes = [
     zd: "z4fy6eswungwmslapj7g2kwrwlnwdefazsazssi",
     nc: "01f568f61e494fae9e32854df77ce6e7",
     mc: "MTAxODc2NTEzOTAwMDAwMDAzMzU4NzU2OQ==",
-    //dd: "P04z54XCjVWnYaS5jYNDWX72HlXltIRy4Jot-E",
+    dd: "P04z54XCjVWnYaS5jYNDWX72HlXltIRy4Jot-E",
     jx: "wuvqpko2F3tj8Yvrdbft0A==",
     zz: "Svfh2RR0c8EnUJR3znfQJdA" ,
-    joy: "f14yCI8QvHeosK7_3kWvOat9zd5YaBeE"
+    joy: "f14yCI8QvHeosK7_3kWvOat9zd5YaBeE" ,
+    cash: "IB4yae-3Y-El9GnSwnAQ1g"
   },
   {
     zd: "4npkonnsy7xi3pzaezezc7plx2o32nlk4ih2jna",
     nc: "5a1b6cd9cc62446cb5ec05e3ef3d7821",
     mc: "MTE1NDQ5OTUwMDAwMDAwNDI1OTMxNDE=",
-    //dd: "P04z54XCjVWnYaS5m9cZ2f5231LknLSN7iRCqE",
+    dd: "P04z54XCjVWnYaS5m9cZ2f5231LknLSN7iRCqE",
     jx: "UdXIG7xaeRenKkCRnXA4bA==",
     zz: "S5KkcRx8f9FXQJRiikP9YJg" ,
-    joy: "zCx4mMEE_YXS3Bv8bX2reqt9zd5YaBeE"
+    joy: "zCx4mMEE_YXS3Bv8bX2reqt9zd5YaBeE" ,
+    cash: "eU9Ya-20Z_0h9GyDz3tBhA"
   },
 
 ];
@@ -32,14 +34,15 @@ $.result = []
 
 !(async () => {
   for (let i = 0; i < shareCodes.length; i++) {
-    const { zd, nc, mc, dd, jx, zz, joy} = shareCodes[i];
+    const { zd, nc, mc, dd, jx, zz, joy, cash} = shareCodes[i];
     zd && await createZd(`http://api.turinglabs.net/api/v1/jd/bean/create/${zd}/`)
     nc && await createNc(`http://api.turinglabs.net/api/v1/jd/farm/create/${nc}/`)
     mc && await createMc(`http://api.turinglabs.net/api/v1/jd/pet/create/${mc}/`)
-    //dd && await createDd(`http://api.turinglabs.net/api/v1/jd/ddfactory/create/${dd}/`)
+    dd && await createDd(`http://api.turinglabs.net/api/v1/jd/ddfactory/create/${dd}/`)
     jx && await createJx(`http://api.turinglabs.net/api/v1/jd/jxfactory/create/${jx}/`)
     zz &await createZz(`https://code.chiang.fun/api/v1/jd/jdzz/create/${zz}/`)
     joy &await createJoy(`https://code.chiang.fun/api/v1/jd/jdcrazyjoy/create/${joy}/`)
+    cash &await createCash(`https://code.chiang.fun/api/v1/jd/jdcash/create/${cash}/`)    
   }
   await showMsg()
 })()
@@ -111,6 +114,26 @@ function createMc(mcUrl) {
   })
 }
 
+//东东工厂
+function createDd(ddUrl) {
+  return new Promise((resolve) => {
+    const url = { url: ddUrl }
+    $.get(url, (err, resp, data) => {
+      try {
+        const _data = JSON.parse(data)
+         if(_data.message.indexOf("existe")!=-1){
+             message += `东东工厂：已在车上`+'\n'
+           }else{
+             message += `东东工厂：完美上车`+'\n'
+            }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
 
 //京喜工厂
 function createJx(jxUrl) {
@@ -176,6 +199,29 @@ function createJoy(joyUrl) {
     })
   })
 }
+
+
+//领现金
+function createCash(cashUrl) {
+  return new Promise((resolve) => {
+    const url = { url: cashUrl }
+    $.get(url, (err, resp, data) => {
+      try {
+        const _data = JSON.parse(data)
+         if(_data.msg.indexOf("Exists")!=-1){
+             message += `领现金：已在车上`+'\n'
+           }else{
+             message += `领现金：完美上车`+'\n'
+            }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
+
 
 
 async function showMsg() {
